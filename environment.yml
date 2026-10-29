@@ -1,0 +1,39 @@
+# RTX 5090: keep torch and torch-scatter exclusively in the pip section.
+# Create a clean environment: conda env create -n octree-gs-5090 -f environment.yml
+# Build local extensions after activation with --no-build-isolation --no-deps.
+name: octree-gs
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - plyfile=0.8.1
+  - python=3.10
+  - pip=25.3
+  - setuptools=80.9.0
+  - tqdm
+  - wheel
+  - ninja
+  - packaging
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu128
+    - --find-links https://data.pyg.org/whl/torch-2.10.0+cu128.html
+    - torch==2.10.0+cu128
+    - torchvision==0.25.0+cu128
+    - torch-scatter==2.1.2+pt210cu128
+    - numpy==1.26.4
+    - einops
+    - wandb
+    - lpips
+    - laspy
+    - jaxtyping
+    - colorama
+    - opencv-python==4.10.0.84
+    # - submodules/diff-gaussian-rasterization
+    # - submodules/simple-knn
+variables:
+  CUDA_HOME: /usr/local/cuda-12.8
+  TORCH_CUDA_ARCH_LIST: "12.0"
+  MAX_JOBS: "4"
+  CC: /usr/bin/gcc
+  CXX: /usr/bin/g++
+  CUDAHOSTCXX: /usr/bin/g++

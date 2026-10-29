@@ -1,0 +1,38 @@
+name: octree-gs
+channels:
+  - pytorch
+  - pyg
+  - conda-forge
+  - defaults
+dependencies:
+  - plyfile=0.8.1
+  - python=3.10
+  - pip=25.3
+  - pytorch-scatter
+  - tqdm
+  - wheel
+  - ninja
+  - packaging
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu128
+    - --find-links https://data.pyg.org/whl/torch-2.10.0+cu128.html
+    - torch==2.10.0+cu128
+    - torchvision==0.25.0+cu128
+    - torch-scatter==2.1.2+pt210cu128
+    - numpy==1.26.4
+    - einops
+    - wandb
+    - lpips
+    - laspy
+    - jaxtyping
+    - colorama
+    - opencv-python
+    # - submodules/diff-gaussian-rasterization
+    # - submodules/simple-knn
+variables:
+  CUDA_HOME: /usr/local/cuda-12.8
+  TORCH_CUDA_ARCH_LIST: "12.0"
+  MAX_JOBS: "4"
+  CC: /usr/bin/gcc
+  CXX: /usr/bin/g++
+  CUDAHOSTCXX: /usr/bin/g++

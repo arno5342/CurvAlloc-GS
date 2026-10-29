@@ -1,0 +1,10 @@
+{
+  "arguments/__init__.py": "128adceb78f9106b4d5bc5d19d846afe9c54947cfa568ac99920c9c9b123a8cb",
+  "scene/gaussian_model.py": "2a2e024b3ac986fa3da1998a303cdf707ffbc1997073bafeda6d35cf41f05162",
+  "scene/__init__.py": "0e342705527a914933bbd91472714710f17594961a3c13c74f614d32eb3b5057",
+  "gaussian_renderer/__init__.py": "3a25c0acf1e98a8ed45b868268d0cca952bac6005dcf6f7f0a8787d1cfe23f4a",
+  "train.py": "9d44dc1e56616c1ff324d92715d4e4187d905a8de2364a5a791605c9ba64f3c4",
+  "utils/geometry_adaptive.py": null,
+  "tests/test_geometry_adaptive.py": null,
+  "GEOMETRY_ADAPTIVE.md": null
+}
